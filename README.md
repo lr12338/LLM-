@@ -1,10 +1,21 @@
-# 项目说明（面向初学者的 Git 使用指南）
 
-#### 适用人群
-- 初学者：第一次用 Git 管理项目代码的人
-- 目标：学会在本地初始化项目、关联远程仓库（GitHub/Gitee）、日常提交与协作
+url：https://github.com/lr12338/LLM-.git
+master：git push -u origin master
 
----
+新增 / 修改文件后，推送更新：
+bash
+git add .
+git commit -m "更新"
+git push
+
+拉取远程仓库的更新（如多人协作时）：
+bash
+git pull origin main
+
+https://github.com/lr12338/LLM-.git
+
+
+
 
 #### 一、准备工作
 - 安装 Git：
