@@ -1,0 +1,11 @@
+video_event_record_id	camera_name	events_type	snap_url	matched
+1993846874922176512	驾驶台	Calling	https://static.hifleet.com/video_event/413601240/995e30e0-1673-409d-8d6f-bca169cd8b78.jpeg	1
+1993846874922176512	驾驶台	Calling	https://static.hifleet.com/video_event/413601240/995e30e0-1673-409d-8d6f-bca169cd8b78.jpeg	1
+1993846608399323136	主甲板	Smoke	https://static.hifleet.com/video_event/413994561/69419846-d9c3-4555-98f4-e6adf55c83da.jpeg	0
+1993846391885156352	驾驶台	Driver-CloseEyes	https://static.hifleet.com/video_event/413601240/e146b37a-d48a-4667-9dde-718bc7d02545.jpeg	0
+1993846336151244800	驾驶台	Driver-CloseEyes	https://static.hifleet.com/video_event/413379510/d29bb30c-832f-4f66-acf0-efd262e3127a.jpeg	0
+1993846288671723520	驾驶台	Smoking	https://static.hifleet.com/video_event/413379510/a805e6fd-79e0-4115-9967-7f62268fbb29.jpeg	0
+1993845531079757824	驾驶台	Smoking	https://static.hifleet.com/video_event/413379510/277f4625-4570-4e72-a2da-83da7d127d58.jpeg	0
+1993845288053395456	驾驶台	Smoking	https://static.hifleet.com/video_event/413587240/803ddca1-bfb7-4b53-b10f-fa674d5c191c.jpeg	1
+1993845288053395456	驾驶台	Smoking	https://static.hifleet.com/video_event/413587240/803ddca1-bfb7-4b53-b10f-fa674d5c191c.jpeg	0
+1993845168008220672	驾驶台	Smoking	https://static.hifleet.com/video_event/1005914/afb0acae-5f7b-40aa-b9ff-7c1e9447bd95.jpeg	0
