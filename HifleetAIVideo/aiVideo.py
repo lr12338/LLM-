@@ -17,11 +17,7 @@ from langgraph.prebuilt import ToolNode, tools_condition
 #添加记忆
 from langgraph.checkpoint.memory import MemorySaver
 
-### 配置langsmith
-import os
-os.environ["LANGCHAIN_TRACING_V2"] = "true"
-os.environ["LANGCHAIN_API_KEY"] = langsmith_key
-os.environ["LANGCHAIN_PROJECT"] = "my-llm-project"
+c
 
 
 # 1. 初始化火山方舟模型（兼容 OpenAI API）
