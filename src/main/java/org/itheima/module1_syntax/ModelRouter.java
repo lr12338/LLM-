@@ -1,5 +1,4 @@
 package org.itheima.module1_syntax;
-import org.itheima.module2_oop.LLMProvider;
 
 import java.util.Scanner;
 

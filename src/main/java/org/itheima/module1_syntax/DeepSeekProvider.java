@@ -1,7 +1,5 @@
 package org.itheima.module1_syntax;
 
-import org.itheima.module2_oop.LLMProvider;
-
 public class DeepSeekProvider implements LLMProvider {
 
     @Override

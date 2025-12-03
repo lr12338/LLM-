@@ -6,7 +6,7 @@ git switch java
 git add .  # 暂存所有修改（或指定文件：git add 文件名.java）
 
 # 3. 提交更改
-git commit -m "java: 新增 XX 类 / 修复 XX 异常 / 优化 XX 逻辑"
+git commit -m "module3更新"
 
 # 4. 推送到远程 java 分支
 git push

@@ -1,5 +1,4 @@
 package org.itheima.module1_syntax;
-import org.itheima.module2_oop.AIModel;
 
 import java.util.Scanner;
 /**
@@ -12,7 +11,7 @@ import java.util.Scanner;
 public class MainTest {
     // Java入口程序规定的方法必须是 static 静态方法，方法名必须为 main，括号内的参数必须是String数组
     // 固定使用static void ，作为程序入口
-    static void main01(String[] args) {
+    public static void main01(String[] args) {
         System.out.println("程序启动中...");
         // 定义常量  （final 定义规范：全大写字母 + 下划线分隔）
         final double GPT4_INPUT_PRICE = 0.03;
@@ -41,7 +40,7 @@ public class MainTest {
             System.out.println("重试"+i+"次");
         }
     }
-    static void main02(String[] args) {
+    public static void main02(String[] args) {
         //1.准备工具：Scanner用于读取控制台输入
         Scanner scanner = new Scanner(System.in);
 
@@ -97,7 +96,7 @@ public class MainTest {
         scanner.close();
 
     }
-    static void main(String[] args) {
+    public static void main(String[] args) {
         AIModel gpt = new AIModel("GPT-4",2.0);
         gpt.describe();
         gpt.setTemperature(3.0);

@@ -1,7 +1,5 @@
 package org.itheima.module1_syntax;
 
-import org.itheima.module2_oop.LLMProvider;
-
 // implements 关键字表示：遵守 LLMProvider 的合同
 public class OpenAIProvider implements LLMProvider {
 

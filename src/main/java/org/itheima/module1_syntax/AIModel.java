@@ -1,4 +1,4 @@
-package org.itheima.module2_oop;
+package org.itheima.module1_syntax;
 
 public class AIModel {
     //1.私有属性，外部不可见

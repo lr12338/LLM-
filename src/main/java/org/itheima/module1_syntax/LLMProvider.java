@@ -1,4 +1,4 @@
-package org.itheima.module2_oop;
+package org.itheima.module1_syntax;
 
 
 //接口：只定义“要做什么”，不定义“怎么做”
