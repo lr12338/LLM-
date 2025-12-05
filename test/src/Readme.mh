@@ -1,0 +1,61 @@
+1.deepseek 调用
+deepseek-chat 和 deepseek-reasoner 思考
+key：sk-af635e7fa9b448b7be5fedfc9ba5a740
+
+curl https://api.deepseek.com/chat/completions \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer sk-af635e7fa9b448b7be5fedfc9ba5a740" \
+  -d '{
+        "model": "deepseek-chat",
+        "messages": [
+          {"role": "system", "content": "You are a helpful assistant."},#
+          {"role": "user", "content": "Hello!，你是谁"}
+        ],
+        "stream": false
+      }'
+
+answer:
+{"id":"d737dbb7-d03e-4825-ac5e-dbdf9bf19b9f",
+"object":"chat.completion",
+"created":1763107335,
+"model":"deepseek-chat",
+"choices":[{"index":0,"message":{"role":"assistant","content":"你好！我是DeepSeek，一个由深度求索公司创造的AI助手。😊\n\n我很高兴为你提供帮助！我可以协助你解答各种问题，无论是学习、工作、生活方面的疑问，还是需要创意写作、代码编写、文档分析等支持，我都很乐意帮忙。\n\n我支持文件上传功能，可以处理图像、txt、pdf、ppt、word、excel等格式的文件，从中读取文字信息进行分析。虽然我是纯文本模型，不支持多模态识别，也没有语音功能，但我有128K的上下文长度，可以处理较长的对话和文档。\n\n最重要的是，我完全免费使用！你可以通过官方应用商店下载App，或者直接在网页端使用。\n\n有什么我可以帮你的吗？我会尽我所能为你提供最好的帮助！✨"},
+"logprobs":null,"finish_reason":"stop"}],
+"usage":{"prompt_tokens":14,"completion_tokens":158,"total_tokens":172,"prompt_tokens_details":{"cached_tokens":0},"prompt_cache_hit_tokens":0,"prompt_cache_miss_tokens":14},"system_fingerprint":"fp_ffc7281d48_prod0820_fp8_kvcache"}%
+
+2.大模型调用-常见参数
+
+model：调用模型
+
+message：发送给模型等数据，模型会根据这些数据给出合适的响应
+    content：消息内容
+    role：消息角色（类型）
+        - user ： 用户消息
+        - system ： 系统消息
+        - assistant ： 模型效应消息
+stream：调用方式
+    - true: 非阻塞调用（流式调用）
+    - false： 阻塞调用（一次性响应），默认值
+enable_search: 联网搜索，启用后，模型会将搜索结果作为参考信息
+    - true： 开启
+    - false： 关闭（默认）
+
+大模型调用-响应参数
+
+choices：模型生成的内容数组，可以包含一条或多条内容
+    - message： 本次调用模型输出的消息
+    - finish_reason: 自然结束（stop），生成内容过长（length）
+    - index：当前内容再choices数组中的索引
+object： 始终为chat.completion,不必关注
+usage：本次对话过程中使用的token信息
+    - prompt_tokens:用户的输入转换成token的个数
+    - completion_tokens：模型生成的回复转化为token的个数
+    - total_tokens: 用户输入和模型生成的总token个数
+created：本次会话被创建时的时间戳
+system_fingerprint: 固定为null，无需关注
+model: 本次会话使用的模型名称
+id: 本次调用的唯一标识符
+
+3.java ai：
+LangChain4j ：https://docs.langchain4j.dev/
+SpringAI

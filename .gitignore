@@ -1,0 +1,46 @@
+# -------------- IDE相关文件 --------------
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+# VSCode
+.vscode/
+.settings/
+# Mac系统
+.DS_Store
+.localized
+
+# -------------- 项目构建产物 --------------
+# Java/Maven
+target/
+out/
+*.jar
+*.war
+*.ear
+*.class
+# Gradle
+.gradle/
+gradle-wrapper.jar
+build/
+# 其他构建产物
+bin/
+logs/
+tmp/
+
+# -------------- 依赖/缓存文件 --------------
+.m2/
+.ivy2/
+.cache/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+
+# -------------- 临时/敏感文件 --------------
+*.log
+*.tmp
+*.bak
+*.swp
+.env
+*.properties.bak

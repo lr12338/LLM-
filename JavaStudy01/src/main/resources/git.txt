@@ -1,0 +1,33 @@
+ https://github.com/lr12338/LLM-
+ 更新Java项目
+# 1. 确保切换到 java 分支
+git switch java
+
+# 2. 修改 Java 代码后，暂存更改
+git add .  # 暂存所有修改（或指定文件：git add 文件名.java）
+
+# 3. 提交更改
+git commit -m "java: 新增 XX 类 / 修复 XX 异常 / 优化 XX 逻辑"
+
+# 4. 推送到远程 java 分支
+
+
+场景 B：拉取远程 java 分支更新
+bash
+git switch java
+git pull  # 自动同步远程 java 到本地 java
+
+
+场景 A：更新 Python 项目（master 分支）
+bash
+# 1. 确保切换到 master 分支
+git switch master
+
+# 2. 修改 Python 代码后，暂存更改
+git add .  # 暂存所有修改（或指定文件：git add 文件名.py）
+
+# 3. 提交更改（描述需清晰，便于追溯）
+git commit -m "master: 优化 XX 功能 / 修复 XX  bug / 新增 XX 模块"
+
+# 4. 推送到远程 master 分支（已设置跟踪，直接推送）
+git push

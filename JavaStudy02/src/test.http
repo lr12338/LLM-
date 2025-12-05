@@ -1,0 +1,9 @@
+### 测试 AI 对话接口
+POST http://localhost:8080/api/ai/chat
+Content-Type: application/json
+
+{
+  "model": "GPT-4",
+  "prompt": "如何学习Java架构？",
+  "temperature": 0.7
+}
