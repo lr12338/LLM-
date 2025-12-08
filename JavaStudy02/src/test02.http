@@ -1,0 +1,8 @@
+### 测试 AI 对话接口
+POST http://localhost:8080/api/ai/summary
+Content-Type: application/json
+
+{
+  "text": "今天是个好日子11111111",
+  "maxlength": 8
+}
