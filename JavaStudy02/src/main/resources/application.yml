@@ -1,0 +1,78 @@
+# ==================================================================
+# 核心服务器配置
+# ==================================================================
+server:
+  port: 8080
+
+# ==================================================================
+# Spring 框架核心配置
+# ==================================================================
+spring:
+  application:
+    name: JavaStudy02
+
+  # 1. MySQL 数据源配置
+  datasource:
+    # 这里的 URL 不需要引号，YAML 会自动识别
+    url: jdbc:mysql://localhost:3306/ai_db?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    # ⚠️ 请确认密码是否正确
+    password: lurui...
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  # 2. Redis 配置
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      password: 123456
+      database: 0
+      # 连接池配置 (可选，生产环境建议加上)
+      lettuce:
+        pool:
+          max-active: 8
+          max-idle: 8
+          min-idle: 0
+
+# ==================================================================
+# MyBatis Plus 配置 (独立层级)
+# ==================================================================
+mybatis-plus:
+  configuration:
+    # 打印 SQL 日志到控制台，方便调试
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+# ==================================================================
+# LangChain4j AI 配置 (核心升级)
+# ==================================================================
+langchain4j:
+  open-ai:
+    chat-model:
+      #deepseek
+#      base-url: https://api.deepseek.com
+#      api-key: sk-af635e7fa9b448b7be5fedfc9ba5a740
+#      model-name: deepseek-chat
+      #huoshan
+      base-url: https://ark.cn-beijing.volces.com/api/v3/chat/completions
+      api-key: 67f8e5b7-61af-4ea1-bf5d-ef9213b2e5df
+      model-name: deepseek-v3-1-terminus
+      # 温度：0.7 比较平衡
+      temperature: 0.7
+      # 超时时间 (默认较短，建议设长一点，防止大模型思考时间过长报错)
+      timeout: PT60S
+      # 日志监控
+      log-requests: true
+      log-responses: true
+
+# ==================================================================
+# [可选] 自定义/旧配置备份
+# 如果你的旧代码里还有 @Value("${ai.active.provider}") 这种写法，
+# 为了防止报错，可以保留下面这段，或者把旧代码删干净后移除这里。
+# ==================================================================
+ai:
+  active:
+    provider: huoshan
+  huoshan:
+    url: https://ark.cn-beijing.volces.com/api/v3/chat/completions
+    key: "67f8e5b7-61af-4ea1-bf5d-ef9213b2e5df"
+    model: deepseek-v3-1-terminus

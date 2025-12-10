@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>AI 打字机效果测试</title>
+</head>
+<body>
+<h2>模拟 AI 对话 (SSE Stream)</h2>
+<input type="text" id="prompt" value="请给我写一首关于Java的七言绝句" style="width: 300px;">
+<button onclick="startChat()">发送</button>
+<div id="output" style="white-space: pre-wrap; margin-top: 20px; border: 1px solid #ccc; padding: 10px; min-height: 100px;"></div>
+
+<script>
+    async function startChat() {
+        const output = document.getElementById('output');
+        const prompt = document.getElementById('prompt').value;
+        output.innerText = ""; // 清空
+
+        // 使用 fetch 发送 POST 请求并处理流
+        const response = await fetch('http://localhost:8080/api/real-ai/stream', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ prompt: prompt })
+        });
+
+        const reader = response.body.getReader();
+        const decoder = new TextDecoder();
+
+        while (true) {
+            const { done, value } = await reader.read();
+            if (done) break;
+
+            // 解码并解析 SSE 格式 (这里简化处理，直接显示文本)
+            // 实际后端发的是纯文本内容 data:content
+            const text = decoder.decode(value);
+
+            // Spring 的 SseEmitter 默认发送格式是: "data:你的内容\n\n"
+            // 我们简单的做个正则提取，或者你可以直接在后端 emitter.send() 发纯文本
+            // 这里为了演示，假设后端发的是纯文本片段
+            const cleanText = text.replace(/data:/g, "").trim();
+
+            // 打字机效果：追加文本
+            output.innerText += text.replace(/data:/g, "");
+        }
+    }
+</script>
+</body>
+</html>
